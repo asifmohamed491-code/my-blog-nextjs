@@ -1,26 +1,27 @@
 
-import { Footer, FooterBrand, FooterCopyright, FooterDivider, FooterLink, FooterLinkGroup } from "flowbite-react";
+import { Footer, FooterCopyright, FooterDivider, FooterLink, FooterLinkGroup } from "flowbite-react";
 
 export default function FooterComponent() {
   return (
-    <Footer container>
-      <div className="w-full text-center bg-black">
-        <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
-          <FooterBrand
-            href="https://flowbite.com"
-            src="https://flowbite.com/docs/images/logo.svg"
-            alt="Flowbite Logo"
-            name="Flowbite"
-          />
-          <FooterLinkGroup>
-            <FooterLink href="#">About</FooterLink>
-            <FooterLink href="#">Privacy Policy</FooterLink>
-            <FooterLink href="#">Licensing</FooterLink>
-            <FooterLink href="#">Contact</FooterLink>
+    <Footer container className="mt-auto">
+      <div className="w-full text-center bg-black text-white py-5">
+        <div className="w-full sm:flex sm:items-center sm:justify-between mb-4">
+          <h1 className="text-2xl ml-3">AmBlog</h1>
+
+          <FooterLinkGroup className="flex gap-2 mr-2">
+            <FooterLink href="#" className="hover:text-gray-400">About</FooterLink>
+            <FooterLink href="#" className="hover:text-gray-400">Contact</FooterLink>
           </FooterLinkGroup>
         </div>
+
         <FooterDivider />
-        <FooterCopyright href="#" by="AmTech™" year={2026} />
+
+        <FooterCopyright
+          className="mt-4"
+          href="#"
+          by="AmTech™"
+          year={2026}
+        />
       </div>
     </Footer>
   );
