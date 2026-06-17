@@ -1,20 +1,54 @@
-export default function contact(){
-    return     <main class="container mx-auto px-4 py-6">
-        <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
-        <form class="w-full max-w-lg">
-            <div class="flex items-center mb-4">
-                <label for="name" class="w-1/4">Name:</label>
-                <input type="text" id="name" class="border rounded px-2 py-1 w-3/4"/>
-            </div>
-            <div class="flex items-center mb-4">
-                <label for="email" class="w-1/4">Email:</label>
-                <input type="email" id="email" class="border rounded px-2 py-1 w-3/4"/>
-            </div>
-            <div class="flex items-center mb-4">
-                <label for="message" class="w-1/4">Message:</label>
-                <textarea id="message" class="border rounded px-2 py-1 w-3/4" rows="4"></textarea>
-            </div>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
-        </form>
-    </main>
+export default function contact() {
+    return (
+        <main className="container mx-auto px-4 py-16 sm:py-20 max-w-2xl">
+            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-indigo-600 mb-3">
+                Get In Touch
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-8">
+                Contact Us
+            </h2>
+
+            <form className="w-full bg-white border border-slate-200 rounded-2xl shadow-sm p-6 sm:p-8 space-y-5">
+                <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1.5">
+                        Name
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow duration-200"
+                        placeholder="Your name"
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
+                        Email
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow duration-200"
+                        placeholder="you@example.com"
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">
+                        Message
+                    </label>
+                    <textarea
+                        id="message"
+                        rows="4"
+                        className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow duration-200 resize-none"
+                        placeholder="How can we help?"
+                    ></textarea>
+                </div>
+
+                <button className="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98] text-white font-semibold py-2.5 px-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-200">
+                    Submit
+                </button>
+            </form>
+        </main>
+    )
 }
