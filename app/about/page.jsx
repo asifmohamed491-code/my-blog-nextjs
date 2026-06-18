@@ -1,4 +1,9 @@
+export const metadata = {
+    title: "About Us Page",
+    description : "AmCode is described here"
+}
 export default function about() {
+    
     return (
         <main className="container mx-auto px-4 py-16 sm:py-20 max-w-3xl">
             <span className="inline-block text-xs font-semibold tracking-widest uppercase text-indigo-600 mb-3">
