@@ -10,7 +10,7 @@ export default function Home() {
   const [hasSearched, setHasSearched] = useState(false);
 
   useEffect(() => {
-    fetch(process.env.NEXT_PUBLIC_API_URL + '/posts')
+    fetch('api/posts')
       .then((res) => res.json())
       .then(res => setPosts(res))
       .finally(() => setLoading(false));
@@ -20,7 +20,7 @@ export default function Home() {
     if (e.type == 'keydown' && e.key !== 'Enter') return;
     setSearch(true);
     setHasSearched(true);
-    fetch(process.env.NEXT_PUBLIC_API_URL + '/posts?q=' + inputRef.current.value)
+    fetch('api/posts?q=' + inputRef.current.value)
       .then((res) => res.json())
       .then(res => setPosts(res))
       .finally(() => setSearch(false));

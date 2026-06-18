@@ -10,7 +10,7 @@ export default function contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(process.env.NEXT_PUBLIC_API_URL + '/enquiry/', {
+        fetch('api/enquiry/', {
             method: 'POST',
             body: JSON.stringify(inputs)
         })
