@@ -8,10 +8,10 @@ export default function post({params}) {
     const [post, setPost] = useState(null);
 
     useEffect(() => {
-        fetch('api/post/' + id)
+        fetch('/api/post/' + id)
             .then(res => res.json())
             .then(res => setPost(res))
-    }, [])
+    }, [id])
 
     return (
         <>
