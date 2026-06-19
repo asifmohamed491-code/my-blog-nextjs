@@ -1,19 +1,66 @@
-import Post from '@/components/Post';
+import Post from '@/components/Post'
 
-export async function generateMetadata({ params }) {
-    const {id} = await params;
+export async function generateMetadata({
+ params
+}) {
 
-   const post =  await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/post/' + id)
-        .then(res => res.json())
+ const {
+  id
+ } =
+ await params
 
-        return {
-            title:post.title
-        }
+ try{
+
+ const res =
+ await fetch(
+
+ `${process.env.NEXT_PUBLIC_URL}/api/post/${id}`
+
+ )
+
+ const post =
+ await res.json()
+
+ return {
+
+ title:
+
+ post?.title
+
+ ||
+
+ 'Post'
+
+ }
+
+ }
+
+ catch{
+
+ return {
+
+ title:
+
+ 'Post'
+
+ }
+
+ }
 
 }
 
-export default async function Page({ params }) {
-    const resolvedParams = await params;
+export default async function Page({
+ params
+}){
 
-    return <Post params={resolvedParams} />
+ return (
+
+ <Post
+ params={
+ await params
+ }
+ />
+
+ )
+
 }
